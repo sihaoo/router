@@ -25,10 +25,10 @@ class Route {
 	var $route_status = false;
 	var $request_method = null;
 	
-	var $post_params = null;
+	var $request_params = null;
 	
 	//default constructor: checks if the variables qualify and assign them to the class variable. throws error accordingly
-	public function __construct($request_path, $post_params, $request_method, $return_type) { 
+	public function __construct($request_path, $request_params, $request_method, $return_type) { 
 	
 		$function = array('class_name'=>__NAMESPACE__, 'method_name'=>__METHOD__);
 		
@@ -53,7 +53,7 @@ class Route {
 		$this->request_method = strtolower($request_method); 
 		
 		//add post params to class if exist
-		$this->post_params = $post_params;
+		$this->request_params = $request_params;
 		//normalise request_path
 		if(is_ready(end($this->request_path)) == false) { array_pop($this->request_path); }
 	}
@@ -73,7 +73,7 @@ class Route {
 	//return the request method for this request
 	public function get_request_method() { return $this->request_method; }
 	//return the post params for this request
-	public function get_post_params() { return $this->post_params; }
+	public function get_request_params() { return $this->request_params; }
 }
 
 ?>

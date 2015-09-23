@@ -33,7 +33,7 @@ class Accessor extends Classes {
 		get_accessor(search_term:variable, row_name:string): retrieves all records with the match row data
 	*/
 	public function get_accessor($param, $post_params) { 
-		
+		 
 		//define tags for parent tags and child tag
 		$parent_tag = 'accessors'; $child_tag = 'accessor';
 		

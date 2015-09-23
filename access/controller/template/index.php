@@ -32,28 +32,28 @@ class Template extends Router implements Controller {
 	public function get() { 
 		$route = parent::get_route();
 		$accessor = new Accessor($route);
-		$accessor->get_accessor($route->get_request_path(), $route->get_post_params());
+		$accessor->get_accessor($route->get_request_path(), $route->get_request_params());
 	}
 	
 	//handles the post request (used to create records)
 	public function post() { 
 		$route = parent::get_route();
 		$accessor = new Accessor($route);
-		$accessor->create_accessor($route->get_request_path(), $route->get_post_params());
+		$accessor->create_accessor($route->get_request_path(), $route->get_request_params());
 	}
 	
 	//handles the put request (used to update records)
 	public function put() { 
 		$route = parent::get_route();
 		$accessor = new Accessor($route);
-		$accessor->update_accessor($route->get_request_path(), $route->get_post_params());
+		$accessor->update_accessor($route->get_request_path(), $route->get_request_params());
 	}
 	
 	//handles the delete request (used to remove records)
 	public function delete() { 
 		$route = parent::get_route();
 		$accessor = new Accessor($route);
-		$accessor->delete_accessor($route->get_request_path(), $route->get_post_params());
+		$accessor->delete_accessor($route->get_request_path(), $route->get_request_params());
 	}
 }
 
